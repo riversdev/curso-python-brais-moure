@@ -1,4 +1,4 @@
-re = ''
+import re
 
 def splitIpAccounting(self, result):
     self.log.DEBUG('Processing Ip Accounting data')
@@ -11,7 +11,7 @@ def splitIpAccounting(self, result):
         if 'Accounting' in row and counter >= 2:
             return 'Ip Accounting without record'
 
-        if ((not re.search('[0-9]', row) or 'Accounting' in row) and counter > 2):
+        if ((not re.search('Accounting|[0-9]', row)) and counter > 2):
             break
 
         code += '<tr class="headers format">' if counter == 0 else '<tr>'

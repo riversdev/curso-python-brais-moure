@@ -45,3 +45,12 @@ def Fibonacci(startNumber, endNumber):
         cur = F(n)
 
 Fibonacci(10, 500)
+
+
+
+print('################### ReGex')
+import re
+
+cad = 'Esta es una 3 cadena Accounting5'
+
+print(re.search('Accounting|[0-9]', cad))
